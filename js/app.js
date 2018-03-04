@@ -185,8 +185,6 @@ function mulligan() {
 
 
 
-
-
 /*************************************************
  FUNCTION HOUSING OTHER FUNCTIONS TO RUN GAME
 *************************************************/
