@@ -21,7 +21,7 @@ body {
     height: 100%;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Coda', cursive;
+    font-family: 'Montserrat', sans-serif;
     color: #FFFFFF;
 }
 
@@ -87,19 +87,19 @@ svg:not(:root).svg-inline--fa {
     background: url('../img/cards-show.png');
     font-size: 33px;
     transform: rotateY(180deg);
-    transition: .55s;
+    transition: .4s;
     transform-style: preserve-3d;
 }
 
 .deck .card.close {
     transform: rotateY(-180deg);
     transition: .25s;
-    transform-style: preserve-3d;
+    /*transform-style: preserve-3d;*/
 }
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #c75c50;
     font-size: 33px;
 }
 

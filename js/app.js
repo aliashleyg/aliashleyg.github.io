@@ -94,7 +94,7 @@ function cardClick ( event ) {
 function compareValues () {
     if (openCards.length === 2) {
         if (openCards[0].innerHTML === openCards[1].innerHTML) {
-            compareMatchedCards();
+            compareMatchedCards(openCards);
             openCards = [];
         } else {
             hideCardValues(openCards);
@@ -115,7 +115,7 @@ function hideCardValues(openCards) {
 	        openCards[i].classList.remove('show');
 	        i = i - 1;
 	    }
-	}, 1500);
+	}, 900);
 	errorSound.play();
 }
 
@@ -123,7 +123,12 @@ function hideCardValues(openCards) {
  FUNCTION FOR DETERMINING IF GAME IS OVER
 *************************************************/
 
-function compareMatchedCards() {
+function compareMatchedCards(openCards) {
+	let i = 1;
+	while (i >=0) {
+		openCards[i].classList.add('match');
+		i = i - 1;
+	}
     if(document.getElementsByClassName("show").length !== array.length) {
     	correctSound.play();
     } else {
@@ -142,7 +147,7 @@ function mulligan() {
 	var cardShow = document.getElementsByClassName('show');
 	let i = cardShow.length - 1;
 	while (i >= 0) {
-		cardShow[i].classList.remove('show');
+		cardShow[i].classList.remove('show','match');
 		i = i - 1;
 	}
 	openCards = [];
