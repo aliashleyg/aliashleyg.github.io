@@ -117,7 +117,6 @@ function hideCardValues(openCards) {
 function compareMatchedCards() {
     if(document.getElementsByClassName("show").length !== array.length) {
     	correctSound.play();
-        console.log('keep playing');
     } else {
         console.log("game over!")
         gameOver.play();
