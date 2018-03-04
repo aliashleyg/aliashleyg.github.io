@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: url('../img/bg.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -35,6 +35,7 @@ h1 {
 
 svg {
     pointer-events: none;
+    transform: rotateY(180deg);
     /*border: 3px solid red;*/
 }
 
@@ -75,12 +76,12 @@ svg:not(:root).svg-inline--fa {
 }
 
 .deck .card.open {
-/*    transform: rotateY(180deg);*/
     background: #02b3e4;
 }
 
 .deck .card.show {
     font-size: 33px;
+    transform: rotateY(180deg);
 }
 
 .deck .card.match {
@@ -116,4 +117,14 @@ svg:not(:root).svg-inline--fa {
     cursor: pointer;
 }
 
+@-webkit-keyframes blink {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
 
+.blink {
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 2s;
+}

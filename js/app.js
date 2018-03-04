@@ -102,6 +102,10 @@ function compareValues () {
     }
 }
 
+/*************************************************
+ FUNCTION TO HIDE CARDS AFTER WRONG CHOICE
+*************************************************/
+
 function hideCardValues(openCards) {
     setTimeout(function(){
 	    let i = 1;
@@ -113,6 +117,9 @@ function hideCardValues(openCards) {
 	errorSound.play();
 }
 
+/*************************************************
+ FUNCTION FOR DETERMINING IF GAME IS OVER
+*************************************************/
 
 function compareMatchedCards() {
     if(document.getElementsByClassName("show").length !== array.length) {
@@ -122,6 +129,10 @@ function compareMatchedCards() {
         gameOver.play();
     }
 }
+
+/*************************************************
+ FUNCTION FOR RESTART BUTTON
+*************************************************/
 
 function mulligan() {
 	var redo = document.querySelector('.restart');
@@ -139,6 +150,39 @@ function mulligan() {
 	});
 }
 
+/*************************************************
+ 				SCORING SECTION
+*************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************************
+ FUNCTION HOUSING OTHER FUNCTIONS TO RUN GAME
+*************************************************/
 
 function gameTime () {
 	while (matchedCards.length !== array.length) {
@@ -156,13 +200,3 @@ gameTime();
 CODE PURGATORY
 --------------
 */
-
-// for (var i = 0; i < array.length; i++) {
-// 		var mulligan = cardShuffled(array);
-// 		var resetCard = document.getElementsByClassName('show)');
-// 		shuffle(array)
-// 		openCards = [];
-// 		matchedCards = [];
-// 		resetCard[i].classList.remove('show');
-// 	}
-// 	return mulligan;
