@@ -17,8 +17,12 @@ body {
 }
 
 body {
-    background: url('../img/bg.png'); /* Background pattern from Subtle Patterns */
+    background: url('../img/steven-spassov-153.jpg'); 
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: 'Coda', cursive;
+    color: #FFFFFF;
 }
 
 .container {
@@ -50,7 +54,7 @@ svg:not(:root).svg-inline--fa {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -76,12 +80,21 @@ svg:not(:root).svg-inline--fa {
 }
 
 .deck .card.open {
-    background: #02b3e4;
+    background: url('../img/cards-open.png');
 }
 
 .deck .card.show {
+    background: url('../img/cards-show.png');
     font-size: 33px;
     transform: rotateY(180deg);
+    transition: .55s;
+    transform-style: preserve-3d;
+}
+
+.deck .card.close {
+    transform: rotateY(-180deg);
+    transition: .25s;
+    transform-style: preserve-3d;
 }
 
 .deck .card.match {

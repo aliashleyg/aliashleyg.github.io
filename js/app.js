@@ -81,6 +81,7 @@ function cardFlip() {
 *************************************************/
 
 function cardClick ( event ) {
+	this.classList.remove('close');
     this.classList.add('open', 'show');
     openCards.push(this);
     compareValues();
@@ -110,10 +111,11 @@ function hideCardValues(openCards) {
     setTimeout(function(){
 	    let i = 1;
 	    while( i >= 0) {
+	        openCards[i].classList.toggle('close');
 	        openCards[i].classList.remove('show');
 	        i = i - 1;
 	    }
-	}, 500);
+	}, 1500);
 	errorSound.play();
 }
 
