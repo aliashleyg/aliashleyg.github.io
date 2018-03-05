@@ -180,7 +180,7 @@ function moveCount() {
 	}
 }
 
-
+/* I FEEL LIKE THERE IS A WAY THIS COULD BE REFACTORED AS THERE IS A LOT OF REPEATED CODE, BUT I AM NOT SURE HOW */
 
 function stars() {
 	starCount = starCount + 1;
@@ -231,12 +231,8 @@ function stars() {
 	return starCount;
 }
 
+
 function starReset() {
-	// var starOne = document.getElementById('starOne');
-	// var starTwo = document.getElementById('starTwo');
-	// var starThree = document.getElementById('starThree');
-	// var starFour = document.getElementById('starFour');
-	// var starFive = document.getElementById('starFive');
 	star = document.querySelectorAll('.star');
 	let i = 0;
 	while (i < star.length) {

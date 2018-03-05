@@ -2,6 +2,10 @@ html {
     box-sizing: border-box;
 }
 
+* {
+        border: 2px solid red;
+}
+
 *,
 *::before,
 *::after {
@@ -11,8 +15,10 @@ html {
 html,
 body {
     width: 100%;
+    min-width: 360px;
+    max-width: 1500px;
     height: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -33,14 +39,19 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    font-family: 'Shadows Into Light', cursive;
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*font-weight: 200;*/
+    font-size: 3.5em;
+    color: #c75c50;
+    text-align: center;
+    margin-top: -5px;
 }
 
 svg {
     pointer-events: none;
     transform: rotateY(180deg);
-    /*border: 3px solid red;*/
+
 }
 
 svg:not(:root).svg-inline--fa {
@@ -109,26 +120,32 @@ svg:not(:root).svg-inline--fa {
  */
 
 .score-panel {
-    text-align: left;
-    width: 345px;
+    margin: 0 auto;
+    text-align: center;
+
     margin-bottom: 10px;
+    margin-top: 25px;
 }
 
 .score-panel .stars {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     display: inline-block;
-    margin: 0 5px 0 0;
+    margin: 10px 0 15px 0;
 }
 
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+    opacity: .8;
 }
 
 .score-panel .restart {
+    vertical-align: center;
     float: right;
     cursor: pointer;
+    opacity: .8;
+    margin: 10px 0 15px 0;
 }
 
 @-webkit-keyframes blink {
@@ -152,3 +169,62 @@ svg:not(:root).svg-inline--fa {
     opacity: 1.0;
     color: #FFF;
 }
+
+
+/*Allison's additional styles*/
+
+.row{
+ display: block;
+ text-align: center;
+}
+
+.row img{
+ display: inline-block;
+}
+
+#logo {
+    max-width: 80%;
+    min-width: 360px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+@media (min-width:768px) {
+    
+    h1 {
+        margin-top: -20px;
+        font-size: 4.2em;
+        }
+
+    .score-panel .stars {
+        float: left;
+        }
+    .score-panel .stars li{
+        margin-right: 12px;
+        }
+}
+
+@media (min-width:992px) {
+ 
+}
+
+@media (min-width:1500px) {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
