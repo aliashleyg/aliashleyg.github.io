@@ -23,6 +23,7 @@ var errorSound = new Audio('sounds/error.wav');
 var correctSound = new Audio('sounds/correct.wav');
 var gameOver = new Audio ('sounds/game-over.wav');
 var shuffleSound = new Audio ('sounds/shuffle.wav');
+var moveCounter = 0;
 
 /*************************************
  FUNCTION TO SHUFFLE THE ARRAY ELEMENTS
@@ -96,9 +97,11 @@ function compareValues () {
         if (openCards[0].innerHTML === openCards[1].innerHTML) {
             compareMatchedCards(openCards);
             openCards = [];
+            moveCount();
         } else {
             hideCardValues(openCards);
             openCards = [];
+            moveCount();
         }
     }
 }
@@ -161,6 +164,34 @@ function mulligan() {
  				SCORING SECTION
 *************************************************/
 
+function moveCount() {
+	moves = document.querySelector('.moves');
+	moveCounter = moveCounter + 1
+	if (moveCounter < 2) {
+		moves.textContent = moveCounter + " Move";
+	} else {
+		moves.textContent = moveCounter + " Moves";
+	}
+}
+
+/* stars section
+count 	 |	 star affected   |   action
+----------------------------------------
+	1			first			na
+	2			first			star blinks
+	3			first			star fades
+	4			second			na
+	5			second			star blinks
+	6			second			star fades
+	7			third			na
+	8			third			star blinks
+	9			third			star fades
+	10			fourth			na
+	11			fourth			star blinks
+	12			fourth			star fades
+	13			fifth			na
+	14			fifth			star blinks	
+	15			fifth			star fades
 
 
 
