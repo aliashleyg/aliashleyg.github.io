@@ -137,7 +137,6 @@ function compareMatchedCards(openCards) {
     if(document.getElementsByClassName("show").length !== array.length) {
     	correctSound.play();
     } else {
-        console.log("game over!")
         gameOver.play();
     }
 }
@@ -158,7 +157,7 @@ function mulligan() {
 	}
 	openCards = [];
 	starCount = 0;
-	var stars = document.querySelector('.fa-star').classList.remove('blink', 'hide');
+	starReset();
 	moveCounter = 0;
 	moves.textContent = "";
 	shuffle(array);
@@ -181,32 +180,41 @@ function moveCount() {
 	}
 }
 
+
+
 function stars() {
 	starCount = starCount + 1;
 	if (starCount <= 3) {
 		if (starCount == 2) {
 			document.querySelector('#starFive').classList.add('blink');
+			
 		} else if (starCount == 3) {
 			document.querySelector('#starFive').classList.add('hide');
 			document.querySelector('#starFive').classList.remove('blink');
+			
 		}
 	} else if (starCount > 3 && starCount <= 6) {
 		if (starCount == 5) {
 			document.querySelector('#starFour').classList.add('blink');
+			
 		} else if (starCount == 6) {
 			document.querySelector('#starFour').classList.add('hide');
 			document.querySelector('#starFour').classList.remove('blink');
+			
 		}
 	} else if (starCount > 6 && starCount <= 9){
 		if (starCount == 8) {
 			document.querySelector('#starThree').classList.add('blink');
+			
 		} else if (starCount == 9) {
 			document.querySelector('#starThree').classList.add('hide');
 			document.querySelector('#starThree').classList.remove('blink');
+			
 		}
 	} else if (starCount > 9 && starCount <= 12){
 		if (starCount == 11) {
 			document.querySelector('#starTwo').classList.add('blink');
+			
 		} else if (starCount == 12) {
 			document.querySelector('#starTwo').classList.add('hide');
 			document.querySelector('#starTwo').classList.remove('blink');
@@ -214,14 +222,38 @@ function stars() {
 	} else {
 		if (starCount == 14) {
 			document.querySelector('#starOne').classList.add('blink');
+			
 		} else if (starCount >=15) {
 			document.querySelector('#starOne').classList.add('hide');
-			document.querySelector('#starOne').classList.remove('blink');
-		}
+			document.querySelector('#starOne').classList.remove('blink');	
+		}	
 	}
+	return starCount;
 }
 
+function starReset() {
+	// var starOne = document.getElementById('starOne');
+	// var starTwo = document.getElementById('starTwo');
+	// var starThree = document.getElementById('starThree');
+	// var starFour = document.getElementById('starFour');
+	// var starFive = document.getElementById('starFive');
+	star = document.querySelectorAll('.star');
+	let i = 0;
+	while (i < star.length) {
+		if (star[i].classList.contains('hide')) {
+			star[i].classList.remove('hide');
+		} else if (star[i].classList.contains('blink')) {
+			star[i].classList.remove('blink');
+		}
+		i = i + 1;
+	}
 
+}
+
+// function endGame() {
+// 	// var gameOverMessage = window.open("", "_self", "width=400, height=400");
+// 	// return gameOverMessage;
+// 	}
 
 
 
@@ -259,6 +291,13 @@ gameTime();
 
 /*
 --------------
-CODE PURGATORY
+TODO LIST
 --------------
 */
+
+/*
+X Disable card after clicked on, so it doesn't count twice
+Figure out how to reset stars 
+Thanks for playing message at the end of game with option to play again
+*/
+

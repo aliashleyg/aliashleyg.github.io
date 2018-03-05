@@ -89,6 +89,7 @@ svg:not(:root).svg-inline--fa {
     transform: rotateY(180deg);
     transition: .4s;
     transform-style: preserve-3d;
+    pointer-events: none;
 }
 
 .deck .card.close {
@@ -145,4 +146,9 @@ svg:not(:root).svg-inline--fa {
 .hide {
     color: #2D2D2D;
     opacity: 0%;
+}
+
+.starReset {
+    opacity: 1.0;
+    color: #FFF;
 }
