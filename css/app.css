@@ -138,6 +138,11 @@ svg:not(:root).svg-inline--fa {
 .blink {
   -webkit-animation-name: blink;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-duration: 1s;
+}
+
+.hide {
+    color: #2D2D2D;
+    opacity: 0%;
 }

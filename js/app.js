@@ -24,6 +24,7 @@ var correctSound = new Audio('sounds/correct.wav');
 var gameOver = new Audio ('sounds/game-over.wav');
 var shuffleSound = new Audio ('sounds/shuffle.wav');
 var moveCounter = 0;
+var starCount = 0;
 
 /*************************************
  FUNCTION TO SHUFFLE THE ARRAY ELEMENTS
@@ -120,6 +121,7 @@ function hideCardValues(openCards) {
 	    }
 	}, 900);
 	errorSound.play();
+	stars();
 }
 
 /*************************************************
@@ -148,12 +150,17 @@ function mulligan() {
 	var redo = document.querySelector('.restart');
 	redo.addEventListener('click', function(){
 	var cardShow = document.getElementsByClassName('show');
+	var moves = document.querySelector('.moves');
 	let i = cardShow.length - 1;
 	while (i >= 0) {
 		cardShow[i].classList.remove('show','match');
 		i = i - 1;
 	}
 	openCards = [];
+	starCount = 0;
+	var stars = document.querySelector('.fa-star').classList.remove('blink', 'hide');
+	moveCounter = 0;
+	moves.textContent = "";
 	shuffle(array);
 	shuffleSound.play();
 	return cardShuffled(array);
@@ -166,7 +173,7 @@ function mulligan() {
 
 function moveCount() {
 	moves = document.querySelector('.moves');
-	moveCounter = moveCounter + 1
+	moveCounter = moveCounter + 1;
 	if (moveCounter < 2) {
 		moves.textContent = moveCounter + " Move";
 	} else {
@@ -174,26 +181,45 @@ function moveCount() {
 	}
 }
 
-/* stars section
-count 	 |	 star affected   |   action
-----------------------------------------
-	1			first			na
-	2			first			star blinks
-	3			first			star fades
-	4			second			na
-	5			second			star blinks
-	6			second			star fades
-	7			third			na
-	8			third			star blinks
-	9			third			star fades
-	10			fourth			na
-	11			fourth			star blinks
-	12			fourth			star fades
-	13			fifth			na
-	14			fifth			star blinks	
-	15			fifth			star fades
-
-
+function stars() {
+	starCount = starCount + 1;
+	if (starCount <= 3) {
+		if (starCount == 2) {
+			document.querySelector('#starFive').classList.add('blink');
+		} else if (starCount == 3) {
+			document.querySelector('#starFive').classList.add('hide');
+			document.querySelector('#starFive').classList.remove('blink');
+		}
+	} else if (starCount > 3 && starCount <= 6) {
+		if (starCount == 5) {
+			document.querySelector('#starFour').classList.add('blink');
+		} else if (starCount == 6) {
+			document.querySelector('#starFour').classList.add('hide');
+			document.querySelector('#starFour').classList.remove('blink');
+		}
+	} else if (starCount > 6 && starCount <= 9){
+		if (starCount == 8) {
+			document.querySelector('#starThree').classList.add('blink');
+		} else if (starCount == 9) {
+			document.querySelector('#starThree').classList.add('hide');
+			document.querySelector('#starThree').classList.remove('blink');
+		}
+	} else if (starCount > 9 && starCount <= 12){
+		if (starCount == 11) {
+			document.querySelector('#starTwo').classList.add('blink');
+		} else if (starCount == 12) {
+			document.querySelector('#starTwo').classList.add('hide');
+			document.querySelector('#starTwo').classList.remove('blink');
+		}	
+	} else {
+		if (starCount == 14) {
+			document.querySelector('#starOne').classList.add('blink');
+		} else if (starCount >=15) {
+			document.querySelector('#starOne').classList.add('hide');
+			document.querySelector('#starOne').classList.remove('blink');
+		}
+	}
+}
 
 
 
