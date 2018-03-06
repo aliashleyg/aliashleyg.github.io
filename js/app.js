@@ -138,6 +138,7 @@ function compareMatchedCards(openCards) {
     	correctSound.play();
     } else {
         gameOver.play();
+        endGame();
     }
 }
 
@@ -246,10 +247,12 @@ function starReset() {
 
 }
 
-// function endGame() {
-// 	// var gameOverMessage = window.open("", "_self", "width=400, height=400");
-// 	// return gameOverMessage;
-// 	}
+function endGame() {
+	setTimeout(function() {
+      $('#myModal').show();
+    }, 500);
+  };
+
 
 
 
