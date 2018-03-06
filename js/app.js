@@ -171,8 +171,15 @@ function mulligan() {
  				SCORING SECTION
 *************************************************/
 
+function timer() {
+	var today = new Date();
+	var startTime = today.getSeconds();
+	console.log(startTime);
+}
+
+
 function moveCount() {
-	moves = document.querySelector('.moves');
+	var moves = document.querySelector('.moves');
 	moveCounter = moveCounter + 1;
 	if (moveCounter < 2) {
 		moves.textContent = moveCounter + " Move";
@@ -232,6 +239,22 @@ function stars() {
 	return starCount;
 }
 
+function starCountTally (stars) {
+	if (starCount >= 15) {
+		return 0 + " stars";
+	} else if (starCount >= 12 && starCount < 15) {
+		return 1 + " star";
+	} else if (starCount >= 9 && starCount < 12) {
+		return 2 + " stars";
+	} else if (starCount >= 6 && starCount < 9) {
+		return 3 + " stars";
+	} else if (starCount >= 3 && starCount < 6) {
+		return 4 + " stars";
+	} else {
+		return 5 + " stars";
+	}
+}
+
 
 function starReset() {
 	star = document.querySelectorAll('.star');
@@ -247,14 +270,21 @@ function starReset() {
 
 }
 
-function endGame() {
-	setTimeout(function() {
-      $('#myModal').show();
+// function endGame() {
+// 	setTimeout(function() {
+//       $('#endGameModal').show();
+//     }, 500);
+//   };
+
+function endGame(moveCount) {
+	var message = document.querySelector('#end-game-message');
+	var totalStars = starCountTally(stars);
+	var modal = document.querySelector('#endGameModal');
+		setTimeout(function() {
+      modal.show();
+      message.textContent = "You completed the game in X seconds, using only " + moveCounter + " moves, and finishing with " + totalStars + ".";
     }, 500);
   };
-
-
-
 
 
 

@@ -14,32 +14,11 @@
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     </head>
     <body>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
     <div class="container-fluid">
         <header class="row">
             <img id="logo" src="img/logo-white.png">
             <h1>just another memory game</h1> 
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#endGameModal"></button>
          </header>
          <section class="row score-panel shading">
             <div class="col-md-8 col-sm-6 col-xs-12">
@@ -79,80 +58,36 @@
                 <li class="card open"></li>
             </ul>
          </main>
+         <!--Modal button-->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#endGameModal"></button>
+
+<!-- Modal -->
+<div class="modal fade" id="endGameModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h1 class="modal-title shading" id="congrats">Congratulations!</h1>
+      </div>
+      <div class="modal-body">
+        <span id="end-game-message">  </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn">play again?</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div><!--end container fluid div-->
         
 
-
-
-        
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script
-          src="https://code.jquery.com/jquery-3.3.1.min.js"
-          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-          crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
-
-
-
-
-
-
-<!-- <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Matching Game</title>
-    <meta name="description" content="">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="css/app.css">
-</head>
-<body>
-
-    <div class="container">
-        <header>
-            <h1>Matching Game</h1>
-        </header>
-
-        <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star star" id="starOne"></i></li>
-        		<li><i class="fa fa-star star" id="starTwo"></i></li>
-        		<li><i class="fa fa-star star" id="starThree"></i></li>
-                <li><i class="fa fa-star star" id="starFour"></i></li>
-                <li><i class="fa fa-star star" id="starFive"></i></li>
-        	</ul>
-
-        	<span class="moves">  </span>
-
-            <div class="restart">
-        		<i class="fas fa-redo"></i>
-        	</div>
-        </section>
-
-        <ul class="deck">
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-            <li class="card open"></li>
-        </ul>
-    </div>
-
-    <script src="js/app.js"></script>
-</body>
-</html> -->

@@ -212,6 +212,44 @@ svg:not(:root).svg-inline--fa {
 .shading {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
+
+/*modal styles*/
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+    text-align: center;
+}
+
+.modal-content {
+    background: url('../img/cards-show.png');
+    border: solid .5px #607d8b;
+}
+
+.modal-body {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.close {
+    opacity: 1.0;
+    color: #FFF;
+}
+
+button.btn {
+    background: url('../img/steven-spassov-153.jpg');
+    border: solid .5px #513090;
+    color: gainsboro;
+}
+
+button.btn:hover {
+    color: #FFF;
+}
+
 @media (min-width: 500px) {
 
     .deck {
@@ -247,6 +285,7 @@ svg:not(:root).svg-inline--fa {
         font-size: 1.5em;
         margin-top: 22px !important;
     }
+
 
 }
 @media (min-width:768px) {
