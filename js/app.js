@@ -1,20 +1,20 @@
 var array = [
-	'<i class="fas fa-bug fa-lg"></i>',
-	'<i class="fas fa-bug fa-lg"></i>',
-	'<i class="fab fa-css3 fa-lg"></i>',
-	'<i class="fab fa-css3 fa-lg"></i>',
-	'<i class="fab fa-html5 fa-lg"></i>',
-	'<i class="fab fa-html5 fa-lg"></i>',
-	'<i class="fab fa-js fa-lg"></i>',
-	'<i class="fab fa-js fa-lg"></i>',
-	'<i class="fab fa-python fa-lg"></i>',
-	'<i class="fab fa-python fa-lg"></i>',
-	'<i class="fas fa-database fa-lg"></i>',
-	'<i class="fas fa-database fa-lg"></i>',
-	'<i class="fas fa-terminal fa-lg"></i>',
-	'<i class="fas fa-terminal fa-lg"></i>',
-	'<i class="fab fa-github fa-lg"></i>',
-	'<i class="fab fa-github fa-lg"></i>'
+	'<i class="icon fas fa-bug"></i>',
+	'<i class="icon fas fa-bug"></i>',
+	'<i class="icon fab fa-css3"></i>',
+	'<i class="icon fab fa-css3"></i>',
+	'<i class="icon fab fa-html5"></i>',
+	'<i class="icon fab fa-html5"></i>',
+	'<i class="icon fab fa-js"></i>',
+	'<i class="icon fab fa-js"></i>',
+	'<i class="icon fab fa-python"></i>',
+	'<i class="icon fab fa-python"></i>',
+	'<i class="icon fas fa-database"></i>',
+	'<i class="icon fas fa-database"></i>',
+	'<i class="icon fas fa-terminal"></i>',
+	'<i class="icon fas fa-terminal"></i>',
+	'<i class="icon fab fa-github"></i>',
+	'<i class="icon fab fa-github"></i>'
 	];
 
 var openCards = [];

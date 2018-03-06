@@ -3,7 +3,7 @@ html {
 }
 
 * {
-        border: 2px solid red;
+        /*border: 2px solid red;*/
 }
 
 *,
@@ -38,6 +38,7 @@ body {
     flex-direction: column;
 }
 
+
 h1 {
     font-family: 'Shadows Into Light', cursive;
     /*font-family: 'Montserrat', sans-serif;*/
@@ -51,11 +52,24 @@ h1 {
 svg {
     pointer-events: none;
     transform: rotateY(180deg);
+    vertical-align: middle;
+    
 
 }
 
 svg:not(:root).svg-inline--fa {
+    margin: auto 0;
     overflow: hidden;
+}
+
+.moves {
+     font-size: 2em;
+     margin: 10px 0 15px 0;
+}
+
+.icon {
+    vertical-align: -webkit-baseline-middle;
+    font-size: 1.4em;
 }
 
 /*
@@ -63,22 +77,23 @@ svg:not(:root).svg-inline--fa {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 340px;
+    height: 340px;
     background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
-    padding: 32px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
+    margin: 0 auto;
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    position: relative;
+    height: 75px;
+    width: 75px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -96,6 +111,9 @@ svg:not(:root).svg-inline--fa {
 
 .deck .card.show {
     background: url('../img/cards-show.png');
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
     font-size: 33px;
     transform: rotateY(180deg);
     transition: .4s;
@@ -106,6 +124,7 @@ svg:not(:root).svg-inline--fa {
 .deck .card.close {
     transform: rotateY(-180deg);
     transition: .25s;
+    opacity: 1.0 !important;
     /*transform-style: preserve-3d;*/
 }
 
@@ -183,12 +202,53 @@ svg:not(:root).svg-inline--fa {
 }
 
 #logo {
-    max-width: 80%;
+    max-width: 60%;
     min-width: 360px;
     text-align: center;
     padding-top: 10px;
 }
 
+
+.shading {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+@media (min-width: 500px) {
+
+    .deck {
+        width: 440px;
+        height: 440px;
+        background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        }
+
+    .deck .card {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        background: #2e3d49;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    } 
+
+    .icon {
+        font-size: 1.6em;
+        margin-top: 22px !important;
+    }
+
+}
 @media (min-width:768px) {
     
     h1 {
@@ -199,9 +259,44 @@ svg:not(:root).svg-inline--fa {
     .score-panel .stars {
         float: left;
         }
+        
     .score-panel .stars li{
         margin-right: 12px;
         }
+
+    .deck {
+        width: 440px;
+        height: 440px;
+        background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        }
+
+    .deck .card {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        background: #2e3d49;
+        font-size: 0;
+        color: #ffffff;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    } 
+
+    .icon {
+        font-size: 1.6em;
+        margin-top: 22px !important;
+    }
 }
 
 @media (min-width:992px) {
