@@ -244,7 +244,7 @@ svg:not(:root).svg-inline--fa {
     } 
 
     .icon {
-        font-size: 1.6em;
+        font-size: 1.5em;
         margin-top: 22px !important;
     }
 
@@ -259,16 +259,16 @@ svg:not(:root).svg-inline--fa {
     .score-panel .stars {
         float: left;
         }
-        
+
     .score-panel .stars li{
         margin-right: 12px;
         }
 
     .deck {
-        width: 440px;
-        height: 440px;
+        width: 700px;
+        height: 700px;
         background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
-        padding: 10px;
+        padding: 30px;
         border-radius: 10px;
         box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
         display: flex;
@@ -280,8 +280,8 @@ svg:not(:root).svg-inline--fa {
 
     .deck .card {
         position: relative;
-        height: 100px;
-        width: 100px;
+        height: 145px;
+        width: 145px;
         background: #2e3d49;
         font-size: 0;
         color: #ffffff;
@@ -295,8 +295,13 @@ svg:not(:root).svg-inline--fa {
 
     .icon {
         font-size: 1.6em;
-        margin-top: 22px !important;
+        margin-top: 45px !important;
     }
+
+    .moves {
+     font-size: 3em;
+     vertical-align: text-bottom;
+}
 }
 
 @media (min-width:992px) {
