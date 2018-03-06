@@ -69,7 +69,7 @@ svg:not(:root).svg-inline--fa {
 
 .icon {
     vertical-align: -webkit-baseline-middle;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 /*
@@ -80,7 +80,7 @@ svg:not(:root).svg-inline--fa {
     width: 340px;
     height: 340px;
     background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
@@ -92,8 +92,8 @@ svg:not(:root).svg-inline--fa {
 
 .deck .card {
     position: relative;
-    height: 75px;
-    width: 75px;
+    height: 70px;
+    width: 70px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -215,10 +215,10 @@ svg:not(:root).svg-inline--fa {
 @media (min-width: 500px) {
 
     .deck {
-        width: 440px;
-        height: 440px;
+        width: 480px;
+        height: 480px;
         background: linear-gradient(155deg, #513090 0%, #ad6ed1 100%);
-        padding: 10px;
+        padding: 20px;
         border-radius: 10px;
         box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
         display: flex;
