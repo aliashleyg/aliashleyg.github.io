@@ -25,7 +25,8 @@ var gameOver = new Audio ('sounds/game-over.wav');
 var shuffleSound = new Audio ('sounds/shuffle.wav');
 var moveCounter = 0;
 var starCount = 0;
-
+var timer;
+var counter = 0;
 
 /*************************************
  FUNCTION TO SHUFFLE THE ARRAY ELEMENTS
@@ -77,15 +78,40 @@ function cardFlip() {
 	}
 }
 
+
 /*************************************************
- FUNCTION TO CLICK IMAGE
+ FUNCTION TO SHOW IMAGE AFTER CLICKING
 *************************************************/
 
 function cardClick (event) {
+	gameTimer();
 	this.classList.remove('close');
     this.classList.add('open', 'show');
     openCards.push(this);
     compareValues();
+}
+
+
+/*************************************************
+ GAME TIMER FUNCTION
+*************************************************/
+/*inputs: 
+  - data to show that game started (first click clicked)
+  - data to show game is finished (last match found)
+
+ *outputs:
+  - second timer that displays how long the game has taken
+  - final time displayed on endGame modal
+*/
+
+function gameTimer(event) {
+	if (counter < 1){
+		setInterval (function () {
+		counter++;
+		console.log(counter);
+	}, 1000);
+	// clearInterval(timer);
+}
 }
 
 /*************************************************
@@ -168,7 +194,6 @@ function reset() {
 	shuffle(array);
 	shuffleSound.play();
 	return cardShuffled(array);
-
 }
 /*************************************************
  				SCORING SECTION
@@ -320,8 +345,7 @@ TODO LIST
 */
 
 /*
-X Disable card after clicked on, so it doesn't count twice
-Figure out how to reset stars 
-Thanks for playing message at the end of game with option to play again
+CREATE TIMER FUNCTION; SET TO START WHEN FIRST CARD IS CLICKED. 
+ADD TIMER TO PAGE AND FINAL TIME TO MODAL.
 */
 
