@@ -18,7 +18,7 @@
         <header class="row">
             <img id="logo" src="img/logo-white.png">
             <h1>just another memory game</h1> 
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#endGameModal"></button>
+            <span class="timer"> </span>
          </header>
          <section class="row score-panel shading">
             <div class="col-md-8 col-sm-6 col-xs-12">
@@ -75,7 +75,7 @@
         <span id="end-game-message">  </span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn">play again?</button>
+        <button type="button" class="btn" id="playAgain" data-dismiss="modal">play again?</button>
       </div>
     </div>
   </div>
@@ -84,9 +84,9 @@
         
 
         <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="js/app.js"></script>
     </body>

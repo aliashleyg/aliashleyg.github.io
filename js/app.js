@@ -26,6 +26,7 @@ var shuffleSound = new Audio ('sounds/shuffle.wav');
 var moveCounter = 0;
 var starCount = 0;
 
+
 /*************************************
  FUNCTION TO SHUFFLE THE ARRAY ELEMENTS
 *************************************/
@@ -70,19 +71,17 @@ function cardShuffled(array) {
 function cardFlip() {
 	var shuffle = cardShuffled(array);
 	var i = 0;
-	var cardClicked;
 	while (i < array.length) {
-		shuffle[i].addEventListener('click', cardClick); 
+		shuffle[i].addEventListener('click', cardClick);
 		i = i + 1;
 	}
-	return cardClicked;
 }
 
 /*************************************************
  FUNCTION TO CLICK IMAGE
 *************************************************/
 
-function cardClick ( event ) {
+function cardClick (event) {
 	this.classList.remove('close');
     this.classList.add('open', 'show');
     openCards.push(this);
@@ -149,6 +148,11 @@ function compareMatchedCards(openCards) {
 function mulligan() {
 	var redo = document.querySelector('.restart');
 	redo.addEventListener('click', function(){
+	reset();
+})
+}
+
+function reset() {
 	var cardShow = document.getElementsByClassName('show');
 	var moves = document.querySelector('.moves');
 	let i = cardShow.length - 1;
@@ -164,18 +168,11 @@ function mulligan() {
 	shuffle(array);
 	shuffleSound.play();
 	return cardShuffled(array);
-	});
-}
 
+}
 /*************************************************
  				SCORING SECTION
 *************************************************/
-
-function timer() {
-	var today = new Date();
-	var startTime = today.getSeconds();
-	console.log(startTime);
-}
 
 
 function moveCount() {
@@ -270,27 +267,25 @@ function starReset() {
 
 }
 
-// function endGame() {
-// 	setTimeout(function() {
-//       $('#endGameModal').show();
-//     }, 500);
-//   };
-
 function endGame(moveCount) {
 	var message = document.querySelector('#end-game-message');
 	var totalStars = starCountTally(stars);
 	var modal = document.querySelector('#endGameModal');
 		setTimeout(function() {
-      modal.show();
-      message.textContent = "You completed the game in X seconds, using only " + moveCounter + " moves, and finishing with " + totalStars + ".";
+      $('#endGameModal').modal('show');
     }, 500);
+
+      message.textContent = "You completed the game in X seconds, using only " + moveCounter + " moves, and finishing with " + totalStars + ".";
+      closeModal();
   };
 
 
-
-
-
-
+function closeModal() {
+	var again = document.querySelector('#playAgain');
+	again.addEventListener('click', function() {
+		reset();
+	}); 
+}
 
 
 
