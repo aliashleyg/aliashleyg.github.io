@@ -95,15 +95,6 @@ function cardClick (event) {
 /*************************************************
  GAME TIMER FUNCTION
 *************************************************/
-/*inputs: 
-  - data to show that game started (first click clicked)
-  - data to show game is finished (last match found)
-
- *outputs:
-  - second timer that displays how long the game has taken
-  - final time displayed on endGame modal
-*/
-
 function gameTimer(event) {
 	if (!timer){
 		timer = setInterval (function () {
@@ -194,6 +185,7 @@ function mulligan() {
 function reset() {
 	var cardShow = document.getElementsByClassName('show');
 	var moves = document.querySelector('.moves');
+	var displayTime = document.querySelector('.timer');
 	let i = cardShow.length - 1;
 	while (i >= 0) {
 		cardShow[i].classList.remove('show','match');
@@ -205,6 +197,7 @@ function reset() {
 	moveCounter = 0;
 	moves.textContent = "";
 	timer = !timer;
+	displayTime.textContent = "";
 	counter = 0;
 	shuffle(array);
 	shuffleSound.play();
