@@ -105,13 +105,22 @@ function cardClick (event) {
 */
 
 function gameTimer(event) {
-	if (counter < 1){
-		setInterval (function () {
+	if (!timer){
+		timer = setInterval (function () {
 		counter++;
-		console.log(counter);
-	}, 1000);
-	// clearInterval(timer);
+		displayTime(counter);
+		}, 1000);
+	}
+	return counter;
 }
+
+function displayTime(counter) {
+	var displaySeconds = document.querySelector('.timer');
+	if (counter === 1) {
+		displaySeconds.textContent = counter + " second";
+	} else {
+	displaySeconds.textContent = counter + " seconds" ;
+	}
 }
 
 /*************************************************
@@ -160,11 +169,14 @@ function compareMatchedCards(openCards) {
 		i = i - 1;
 	}
     if(document.getElementsByClassName("show").length !== array.length) {
+    	matchedCards = matchedCards + 2;
     	correctSound.play();
     } else {
+    	clearInterval(timer);
         gameOver.play();
         endGame();
     }
+    return true;
 }
 
 /*************************************************
@@ -191,6 +203,8 @@ function reset() {
 	starReset();
 	moveCounter = 0;
 	moves.textContent = "";
+	timer = !timer;
+	counter = 0;
 	shuffle(array);
 	shuffleSound.play();
 	return cardShuffled(array);
@@ -300,7 +314,7 @@ function endGame(moveCount) {
       $('#endGameModal').modal('show');
     }, 500);
 
-      message.textContent = "You completed the game in X seconds, using only " + moveCounter + " moves, and finishing with " + totalStars + ".";
+      message.textContent = "You completed the game in " + counter + " seconds, using only " + moveCounter + " moves, and finishing with " + totalStars + ".";
       closeModal();
   };
 

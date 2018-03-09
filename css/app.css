@@ -38,6 +38,9 @@ body {
     flex-direction: column;
 }
 
+ul {
+    margin-bottom: 0 !important;
+}
 
 h1 {
     font-family: 'Shadows Into Light', cursive;
@@ -62,9 +65,17 @@ svg:not(:root).svg-inline--fa {
     overflow: hidden;
 }
 
-.moves {
+.moves{
      font-size: 2em;
-     margin: 10px 0 15px 0;
+     display: inline-block;
+}
+
+.timer {
+
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: super;
+
 }
 
 .icon {
@@ -94,9 +105,9 @@ svg:not(:root).svg-inline--fa {
     position: relative;
     height: 70px;
     width: 70px;
-    background: #2e3d49;
+/*    background: #2e3d49;*/
     font-size: 0;
-    color: #ffffff;
+    background: url('../img/cards-open.png');
     border-radius: 8px;
     cursor: pointer;
     display: flex;
@@ -146,7 +157,7 @@ svg:not(:root).svg-inline--fa {
     margin-top: 25px;
 }
 
-.score-panel .stars {
+.score-panel .stars .scoring {
     margin: 0 auto;
     padding: 0;
     display: inline-block;
@@ -164,7 +175,7 @@ svg:not(:root).svg-inline--fa {
     float: right;
     cursor: pointer;
     opacity: .8;
-    margin: 10px 0 15px 0;
+    margin: 0 0 0 0;
 }
 
 @-webkit-keyframes blink {
@@ -211,6 +222,7 @@ svg:not(:root).svg-inline--fa {
 
 .shading {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    padding: 10px;
 }
 
 
@@ -296,11 +308,11 @@ button.btn:hover {
         }
 
     .score-panel .stars {
-        float: left;
+        /*float: left;*/
         }
 
     .score-panel .stars li{
-        margin-right: 12px;
+        margin-right: 10px;
         }
 
     .deck {
@@ -338,9 +350,12 @@ button.btn:hover {
     }
 
     .moves {
-     font-size: 3em;
-     vertical-align: text-bottom;
-}
+     font-size: 2em;
+     vertical-align: middle;
+    }
+    .scoring {
+     vertical-align: top;
+    }
 }
 
 @media (min-width:992px) {
