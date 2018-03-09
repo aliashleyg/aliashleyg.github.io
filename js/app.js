@@ -172,6 +172,7 @@ function compareMatchedCards(openCards) {
     	matchedCards = matchedCards + 2;
     	correctSound.play();
     } else {
+    	// moveCounter = moveCounter + 1;
     	clearInterval(timer);
         gameOver.play();
         endGame();
@@ -222,6 +223,7 @@ function moveCount() {
 	} else {
 		moves.textContent = moveCounter + " Moves";
 	}
+	// return moveCounter;
 }
 
 /* I FEEL LIKE THERE IS A WAY THIS COULD BE REFACTORED AS THERE IS A LOT OF REPEATED CODE, BUT I AM NOT SURE HOW */
@@ -306,7 +308,7 @@ function starReset() {
 
 }
 
-function endGame(moveCount) {
+function endGame() {
 	var message = document.querySelector('#end-game-message');
 	var totalStars = starCountTally(stars);
 	var modal = document.querySelector('#endGameModal');
@@ -314,7 +316,7 @@ function endGame(moveCount) {
       $('#endGameModal').modal('show');
     }, 500);
 
-      message.textContent = "You completed the game in " + counter + " seconds, using only " + moveCounter + " moves, and finishing with " + totalStars + ".";
+      message.textContent = "You completed the game in " + counter + " seconds, using only " + (moveCounter + 1) + " moves, and finishing with " + totalStars + ".";
       closeModal();
   };
 
