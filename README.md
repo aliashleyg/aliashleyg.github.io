@@ -3,7 +3,7 @@ This is a classic memory game, in which you flip cards and match them until all 
 
 ## Getting Started/Installation Information
 **No special software is needed to play the game.**
-[Click here to play the game.](https://aliashleyg.github.io/)
+[Click here to play the game.](https://aliashleyg.github.io/memory-game/)
 
 ## Game Play Instructions:
 * Click any card to start the game.
